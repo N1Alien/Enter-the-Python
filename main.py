@@ -42,7 +42,7 @@ def simple_topo_sort(steps, dependencies):
         for step in remaining:
             # print(f"Adding step: {step}")
             # Check if all dependencies are satisfied
-            if all(pre in ordered for pre, post in dependencies if post == step):
+            if all(dep[0] in ordered for dep in dependencies if dep[1] == step):
                 ordered.append(step)
                 # print(f"Ordered: {ordered}")
                 remaining.remove(step)

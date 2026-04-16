@@ -21,7 +21,7 @@ incomplete_days = ['pon','śro','pią','sob']
 missing_days = ['wto', 'czw', 'nie']
 
 def merge_days(incomplete, missing):
-    result = incomplete_days
+    result = incomplete_days.copy()
     for i, day in enumerate(missing[:-1]):
         result.insert(2 * i + 1, day)
         # print(i, day)
